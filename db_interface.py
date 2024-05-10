@@ -17,7 +17,8 @@ def connect_to_db(your_username, your_password, your_host, your_database):
         # Close the connection
         connection.close()
         return engine
-    except OperationalError:
+    except OperationalError as e:
+        st.write(e)
         return None
 
 
